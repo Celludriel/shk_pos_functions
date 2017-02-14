@@ -1,15 +1,12 @@
-# shk_pos_functions
-Shuko Position Function Library
+/*
+  SHK_pos
 
-  SHK_pos_functions
-
-  Version 1.0
+  Version 0.24
   Author: Shuko (shuko@quakenet, miika@miikajarvinen.fi)
-  Contributors: Cool=Azroul13, Hatifnat, Celludriel
+  Contributors: Cool=Azroul13, Hatifnat
 
-  Original Shuko Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
-  Celludriel Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
-  
+  Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
+
   Marker Based Selection
     Required Parameters:
       0 String   Area marker's name.
@@ -57,21 +54,33 @@ Shuko Position Function Library
                               [...,(typeof heli)]    Only vehicle type given
                               [...,heli]             Only vehicle object given
 
-  Release download:
-    
-  
-  Installation:
-	Unpack this zip in the directory of your choice in your mission fe: shk_pos
-  
   Usage:
     include CfgFunctions.hpp in description.ext:
       class CfgFunctions
       {
-		...
         #include "shk_pos\CfgFunctions.hpp"
-		...
       };
 
     Actually getting the position:
       pos = [parameters] call ShkPos_fnc_executeFindPosition;
 */
+diag_log format ["_this: [%1]", _this];
+private ["_pos"];
+_pos = [];
+
+// Only marker is given as parameter
+if (typename _this == "STRING") then {
+  _pos = [_this] call ShkPos_fnc_findRandomPositionInMarker;
+
+// Parameter array
+} else {
+  if (typename (_this select 0) == "STRING") then {
+    _pos = _this call ShkPos_fnc_findRandomPositionInMarker;
+  } else {
+      diag_log format ["Calling ShkPos_fnc_findPosition with %1", _this];
+    _pos = _this call ShkPos_fnc_findPosition;
+  };
+};
+
+// Return position
+_pos
