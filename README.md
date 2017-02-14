@@ -10,7 +10,7 @@ Shuko Position Function Library
   Original Shuko Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
   Celludriel Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
   
-  Marker Based Selection
+    Marker Based Selection
     Required Parameters:
       0 String   Area marker's name.
 
@@ -30,7 +30,7 @@ Shuko Position Function Library
                               [...,(typeof heli)]    Only vehicle type given
                               [...,heli]             Only vehicle object given
 
-  Position Based Selection
+    Position Based Selection
     Required Parameters:
       0 Object or Position  Anchor point from where the relative position is calculated from.
       1 Array or Number     Distance from anchor.
@@ -57,21 +57,20 @@ Shuko Position Function Library
                               [...,(typeof heli)]    Only vehicle type given
                               [...,heli]             Only vehicle object given
 
-  Release download:
+    Release download:
+    https://github.com/Celludriel/shk_pos_functions/archive/1.0.0.zip
     
-  
-  Installation:
-	Unpack this zip in the directory of your choice in your mission fe: shk_pos
-  
-  Usage:
+    Installation:
+    Unpack this zip in the directory of your choice in your mission fe: shk_pos
+    
+    Usage:
     include CfgFunctions.hpp in description.ext:
-      class CfgFunctions
-      {
-		...
+    class CfgFunctions
+    {
+        ...
         #include "shk_pos\CfgFunctions.hpp"
-		...
-      };
-
+        ...
+    };
+    
     Actually getting the position:
-      pos = [parameters] call ShkPos_fnc_executeFindPosition;
-*/
+        pos = [parameters] call ShkPos_fnc_executeFindPosition;
