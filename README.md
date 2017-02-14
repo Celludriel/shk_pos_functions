@@ -8,7 +8,7 @@ Shuko Position Function Library
   Contributors: Cool=Azroul13, Hatifnat, Celludriel
 
   Original Shuko Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
-  Celludriel Forum: http://forums.bistudio.com/showthread.php?162695-SHK_pos
+  Celludriel Forum: https://forums.bistudio.com/topic/202195-release-shk_pos_functions
   
     Marker Based Selection
     Required Parameters:
